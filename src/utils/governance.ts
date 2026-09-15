@@ -763,7 +763,9 @@ export async function createProposal(
     parameterChanges = [
       {
         parameter: 'fee_rate_bps',
-        currentValue: `${MOCK_PROTOCOL_PARAMS.feeRateBps} (${MOCK_PROTOCOL_PARAMS.feeRateBps / 100}%)`,
+        currentValue: `${MOCK_PROTOCOL_PARAMS.feeRateBps} (${
+          MOCK_PROTOCOL_PARAMS.feeRateBps / 100
+        }%)`,
         newValue: `${payload.newValueBps} (${payload.newValueBps / 100}%)`,
       },
     ];
@@ -771,7 +773,9 @@ export async function createProposal(
     parameterChanges = [
       {
         parameter: 'max_discount_rate_bps',
-        currentValue: `${MOCK_PROTOCOL_PARAMS.maxDiscountRateBps} (${MOCK_PROTOCOL_PARAMS.maxDiscountRateBps / 100}%)`,
+        currentValue: `${MOCK_PROTOCOL_PARAMS.maxDiscountRateBps} (${
+          MOCK_PROTOCOL_PARAMS.maxDiscountRateBps / 100
+        }%)`,
         newValue: `${payload.newValueBps} (${payload.newValueBps / 100}%)`,
       },
     ];
@@ -781,7 +785,9 @@ export async function createProposal(
       {
         parameter: 'accepted_tokens',
         currentValue: `[${existing.join(', ')}]`,
-        newValue: `[${existing.join(', ')}, ${payload.tokenName ?? payload.tokenAddress.slice(0, 6)}]`,
+        newValue: `[${existing.join(', ')}, ${
+          payload.tokenName ?? payload.tokenAddress.slice(0, 6)
+        }]`,
       },
     ];
   } else if (payload.formType === 'RemoveToken' && payload.removeTokenAddress) {

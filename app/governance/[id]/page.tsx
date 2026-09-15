@@ -448,7 +448,9 @@ export default function ProposalDetailPage() {
                         </span>
                       </span>
                       <p
-                        className={`text-sm font-medium ${step.done ? 'text-on-surface' : 'text-on-surface-variant'}`}
+                        className={`text-sm font-medium ${
+                          step.done ? 'text-on-surface' : 'text-on-surface-variant'
+                        }`}
                       >
                         {step.label}
                       </p>

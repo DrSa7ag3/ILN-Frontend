@@ -181,7 +181,9 @@ function FilterTabs({
         >
           {f}
           <span
-            className={`ml-1.5 text-xs ${active === f ? 'text-white/70' : 'text-on-surface-variant/60'}`}
+            className={`ml-1.5 text-xs ${
+              active === f ? 'text-white/70' : 'text-on-surface-variant/60'
+            }`}
           >
             {counts[f]}
           </span>

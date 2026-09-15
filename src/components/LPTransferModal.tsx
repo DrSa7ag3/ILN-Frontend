@@ -120,10 +120,15 @@ export default function LPTransferModal({ invoice, onClose, onSuccess }: LPTrans
       return 'Enter a valid Stellar G-address (56 characters starting with G).';
     if (value.trim() === address) return 'You cannot transfer a position to yourself.';
     if (!tokenMatchesInvoice) {
-      return `Select the invoice token before transferring. Invoice #${invoice.id.toString()} is denominated in ${selectedTokenLabel(invoiceTokenId)}.`;
+      return `Select the invoice token before transferring. Invoice #${invoice.id.toString()} is denominated in ${selectedTokenLabel(
+        invoiceTokenId
+      )}.`;
     }
     if (invoice.amount < minimumAmount) {
-      return `${selectedToken.symbol} transfers require at least ${formatTokenAmount(minimumAmount, selectedToken)}.`;
+      return `${selectedToken.symbol} transfers require at least ${formatTokenAmount(
+        minimumAmount,
+        selectedToken
+      )}.`;
     }
     if (balancesLoading) {
       return `${selectedToken.symbol} balance is still loading. Please try again in a moment.`;

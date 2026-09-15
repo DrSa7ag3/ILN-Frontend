@@ -148,7 +148,9 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
     ) => {
       const stableId =
         notification.id ??
-        `${notification.category}-${notification.type}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+        `${notification.category}-${notification.type}-${Date.now()}-${Math.random()
+          .toString(36)
+          .slice(2, 8)}`;
 
       const newNotification: NotificationItem = {
         ...notification,

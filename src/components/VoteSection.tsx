@@ -110,7 +110,9 @@ export default function VoteSection({
             </p>
           </div>
           <span
-            className={`text-xs font-semibold uppercase tracking-[0.22em] ${proposal.status === 'Active' ? 'text-emerald-500' : 'text-on-surface-variant'}`}
+            className={`text-xs font-semibold uppercase tracking-[0.22em] ${
+              proposal.status === 'Active' ? 'text-emerald-500' : 'text-on-surface-variant'
+            }`}
           >
             {proposal.status}
           </span>
@@ -201,7 +203,13 @@ export default function VoteSection({
                     {VOTE_STYLES[pendingVote].icon}
                   </span>
                   <span
-                    className={`font-bold ${pendingVote === 'For' ? 'text-emerald-500' : pendingVote === 'Against' ? 'text-red-500' : 'text-on-surface-variant'}`}
+                    className={`font-bold ${
+                      pendingVote === 'For'
+                        ? 'text-emerald-500'
+                        : pendingVote === 'Against'
+                          ? 'text-red-500'
+                          : 'text-on-surface-variant'
+                    }`}
                   >
                     {pendingVote}
                   </span>

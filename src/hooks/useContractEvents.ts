@@ -61,7 +61,9 @@ export function useContractEvents(enabled = true) {
               const delay = BASE_DELAY_MS * Math.pow(2, attempt);
               if (process.env.NODE_ENV === 'development') {
                 console.error(
-                  `[ContractEventSync] Connection failed. Retry ${attempt + 1}/${MAX_RETRIES} in ${delay}ms`
+                  `[ContractEventSync] Connection failed. Retry ${
+                    attempt + 1
+                  }/${MAX_RETRIES} in ${delay}ms`
                 );
               }
               setError(`Connection lost. Retrying... (${attempt + 1}/${MAX_RETRIES})`);

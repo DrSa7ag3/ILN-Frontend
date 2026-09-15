@@ -148,7 +148,9 @@ export default function AdminHealthDashboard() {
     if (!address || !health) return;
     const nextPaused = !health.paused;
     const confirmed = window.confirm(
-      `Confirm ${nextPaused ? 'pausing' : 'unpausing'} the protocol. This sensitive admin action will call the contract.`
+      `Confirm ${
+        nextPaused ? 'pausing' : 'unpausing'
+      } the protocol. This sensitive admin action will call the contract.`
     );
     if (!confirmed) return;
 
@@ -170,7 +172,9 @@ export default function AdminHealthDashboard() {
   const handleExecuteReady = async () => {
     if (!address || !health || health.readyProposals.length === 0) return;
     const confirmed = window.confirm(
-      `Confirm executing ${health.readyProposals.length} ready governance proposal${health.readyProposals.length === 1 ? '' : 's'}.`
+      `Confirm executing ${health.readyProposals.length} ready governance proposal${
+        health.readyProposals.length === 1 ? '' : 's'
+      }.`
     );
     if (!confirmed) return;
 
@@ -215,7 +219,10 @@ export default function AdminHealthDashboard() {
   const handleRemoveToken = async (tokenId: string, symbol: string) => {
     if (!address) return;
     const confirmed = window.confirm(
-      `Confirm removing token ${symbol} (${tokenId.slice(0, 8)}…) from the approved list. This will prevent new invoices from using this token.`
+      `Confirm removing token ${symbol} (${tokenId.slice(
+        0,
+        8
+      )}…) from the approved list. This will prevent new invoices from using this token.`
     );
     if (!confirmed) return;
 
@@ -307,7 +314,9 @@ export default function AdminHealthDashboard() {
                 <MetricPanel
                   title="Pending Governance Proposals"
                   value={pendingProposalCount.toString()}
-                  detail={`${readyProposalCount} proposal${readyProposalCount === 1 ? '' : 's'} ready to execute.`}
+                  detail={`${readyProposalCount} proposal${
+                    readyProposalCount === 1 ? '' : 's'
+                  } ready to execute.`}
                   tone={readyProposalCount > 0 ? 'warning' : 'default'}
                 />
                 <MetricPanel
@@ -326,7 +335,9 @@ export default function AdminHealthDashboard() {
                 />
                 <MetricPanel
                   title="Treasury Balance"
-                  value={`${health.treasuryBalanceXlm.toLocaleString(undefined, { maximumFractionDigits: 2 })} XLM`}
+                  value={`${health.treasuryBalanceXlm.toLocaleString(undefined, {
+                    maximumFractionDigits: 2,
+                  })} XLM`}
                   detail="Native XLM balance for the configured admin treasury account."
                 />
               </div>

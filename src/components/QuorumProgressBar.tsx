@@ -42,7 +42,11 @@ export default function QuorumProgressBar({
   const fillWidth = mounted ? pct : 0;
   const remainingVotes = Math.max(quorumRequired - votesCast, 0);
   const statusLabel = quorumMet ? 'Quorum met' : 'Quorum pending';
-  const screenReaderText = `${pct.toFixed(0)}% complete. ${statusLabel}. ${quorumMet ? 'Required quorum reached.' : `${formatVotes(remainingVotes)} remaining to reach quorum.`}`;
+  const screenReaderText = `${pct.toFixed(0)}% complete. ${statusLabel}. ${
+    quorumMet
+      ? 'Required quorum reached.'
+      : `${formatVotes(remainingVotes)} remaining to reach quorum.`
+  }`;
 
   return (
     <div className={`space-y-2 ${className}`} data-testid="quorum-progress-bar">

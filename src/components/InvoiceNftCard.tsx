@@ -185,7 +185,9 @@ function NftBody({
               href={state.currentHolder ? `/profile/${state.currentHolder}` : undefined}
               externalHref={
                 state.currentHolder
-                  ? `https://stellar.expert/explorer/${getExplorerNetworkPath()}/account/${state.currentHolder}`
+                  ? `https://stellar.expert/explorer/${getExplorerNetworkPath()}/account/${
+                      state.currentHolder
+                    }`
                   : undefined
               }
             />

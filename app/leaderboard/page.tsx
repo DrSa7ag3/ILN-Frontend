@@ -224,7 +224,9 @@ export default function LeaderboardPage() {
       <tr
         key={item.address}
         data-testid={isUser ? 'leaderboard-user-row' : undefined}
-        className={`border-t border-outline-variant/20 transition-colors ${isUser ? 'bg-primary/10' : 'bg-transparent hover:bg-surface-container-low'}`}
+        className={`border-t border-outline-variant/20 transition-colors ${
+          isUser ? 'bg-primary/10' : 'bg-transparent hover:bg-surface-container-low'
+        }`}
       >
         <td className="px-5 py-4 font-semibold text-on-surface-variant">
           <div className="flex items-center gap-2">

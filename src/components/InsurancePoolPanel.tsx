@@ -39,7 +39,9 @@ export default function InsurancePoolPanel() {
       {
         title: 'Enrolling in Protection',
         successTitle: 'Enrolled Successfully',
-        successMessage: `You have deposited ${premiumAmount} ${defaultToken?.symbol ?? 'USDC'} into the insurance pool.`,
+        successMessage: `You have deposited ${premiumAmount} ${
+          defaultToken?.symbol ?? 'USDC'
+        } into the insurance pool.`,
       }
     );
     refresh();

@@ -142,7 +142,10 @@ export default function FundConfirmModal({
         title: `Approving ${selectedToken?.symbol || 'token'}...`,
         pendingMessage: 'Waiting for wallet signature...',
         successTitle: `${selectedToken?.symbol || 'Token'} approved`,
-        successMessage: `Allowance updated for ${formatTokenAmount(invoice.amount, selectedToken || selectedInvoiceToken!)}.`,
+        successMessage: `Allowance updated for ${formatTokenAmount(
+          invoice.amount,
+          selectedToken || selectedInvoiceToken!
+        )}.`,
       }
     );
 
@@ -218,10 +221,16 @@ export default function FundConfirmModal({
         {needsApproval && (
           <div className="flex items-center gap-4">
             <div
-              className={`flex items-center gap-2 ${currentStep === 'approve' ? 'text-primary' : 'text-on-surface-variant line-through'}`}
+              className={`flex items-center gap-2 ${
+                currentStep === 'approve' ? 'text-primary' : 'text-on-surface-variant line-through'
+              }`}
             >
               <div
-                className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${currentStep === 'approve' ? 'bg-primary text-surface-container-lowest' : 'bg-surface-variant text-on-surface-variant'}`}
+                className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                  currentStep === 'approve'
+                    ? 'bg-primary text-surface-container-lowest'
+                    : 'bg-surface-variant text-on-surface-variant'
+                }`}
               >
                 1
               </div>
@@ -229,10 +238,16 @@ export default function FundConfirmModal({
             </div>
             <div className="w-12 h-px bg-surface-variant"></div>
             <div
-              className={`flex items-center gap-2 ${currentStep === 'fund' ? 'text-primary' : 'text-on-surface-variant opacity-50'}`}
+              className={`flex items-center gap-2 ${
+                currentStep === 'fund' ? 'text-primary' : 'text-on-surface-variant opacity-50'
+              }`}
             >
               <div
-                className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${currentStep === 'fund' ? 'bg-primary text-surface-container-lowest' : 'bg-surface-variant text-on-surface-variant'}`}
+                className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+                  currentStep === 'fund'
+                    ? 'bg-primary text-surface-container-lowest'
+                    : 'bg-surface-variant text-on-surface-variant'
+                }`}
               >
                 2
               </div>
@@ -305,7 +320,11 @@ export default function FundConfirmModal({
                 <p className="text-lg text-on-surface-variant">
                   {isCheckingAllowance
                     ? 'Checking current allowance...'
-                    : `You're authorising ILN to spend ${selectedToken ? formatTokenAmount(invoice.amount, selectedToken) : `${invoice.amount.toString()} ${tokenSymbol}`} from your wallet. This is a one-time approval.`}
+                    : `You're authorising ILN to spend ${
+                        selectedToken
+                          ? formatTokenAmount(invoice.amount, selectedToken)
+                          : `${invoice.amount.toString()} ${tokenSymbol}`
+                      } from your wallet. This is a one-time approval.`}
                 </p>
               </div>
 

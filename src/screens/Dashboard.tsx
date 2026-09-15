@@ -396,7 +396,11 @@ export default function DashboardPage() {
                       visibleInvoices.map((invoice) => (
                         <tr
                           key={invoice.id.toString()}
-                          className={`transition-colors ${selectedIds.has(invoice.id.toString()) ? 'bg-primary/5' : 'hover:bg-surface-container-low'}`}
+                          className={`transition-colors ${
+                            selectedIds.has(invoice.id.toString())
+                              ? 'bg-primary/5'
+                              : 'hover:bg-surface-container-low'
+                          }`}
                         >
                           <td className="px-4 py-5 pl-6">
                             <input
