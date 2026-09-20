@@ -81,7 +81,7 @@ export default function AdminFlagDashboard() {
   const router = useRouter();
   const [flags] = useState<FlagEntry[]>(getFlags);
 
-  useDocumentTitle('Feature Flag Status · Admin');
+  useDocumentTitle({ pageTitle: 'Feature Flag Status · Admin' });
 
   useEffect(() => {
     if (address !== undefined && !isAdminAddress(address)) {
@@ -140,9 +140,7 @@ export default function AdminFlagDashboard() {
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-on-surface-variant">
               Disabled
             </p>
-            <p className="mt-2 text-2xl font-bold text-on-surface">
-              {flags.length - enabledCount}
-            </p>
+            <p className="mt-2 text-2xl font-bold text-on-surface">{flags.length - enabledCount}</p>
           </div>
         </div>
 
@@ -153,9 +151,9 @@ export default function AdminFlagDashboard() {
         </ul>
 
         <p className="mt-8 text-xs text-on-surface-variant/60">
-          Flag values are read from{' '}
-          <code className="font-mono">NEXT_PUBLIC_*_ENABLED</code> environment variables at build
-          time. To change a flag, update the variable in Vercel and trigger a redeployment. See{' '}
+          Flag values are read from <code className="font-mono">NEXT_PUBLIC_*_ENABLED</code>{' '}
+          environment variables at build time. To change a flag, update the variable in Vercel and
+          trigger a redeployment. See{' '}
           <a href="/docs/feature-flags.md" className="underline">
             docs/feature-flags.md
           </a>{' '}
