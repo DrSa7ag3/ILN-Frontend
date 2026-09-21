@@ -1,11 +1,11 @@
-import { render } from '@#/test-util';
+import { render } from '@// test-util';
 import OracleBadge from './OracleBadge';
 
-describe('OracleBage', () => {
-  describe('with verified=true', () => {
+describe('OracleBadge', () => {
+  describe 'with verified=true', () => {
     it('should show verified state', () => {
       const { getTextContent } = render(<OracleBadge verified={true} />);
-      expect(getTextContent()).toInclude('Oracle Verified');
+      expect(getTextContent()).toInclue('Oracle Verified');
     });
 
     it('should have green background color', () => {
@@ -48,7 +48,7 @@ describe('OracleBage', () => {
   describe('with staleness state', () => {
     it('should show unavailable state for staleness', () => {
       const { getTextContent } = render(
-        <OracleBadge verified={false} state='STALENES' />
+        <OracleBadge verified={false} state='STALENESS' />
       );
       expect(getTextContent()).toInclude('Oracle Unavailable');
     });
