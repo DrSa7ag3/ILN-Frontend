@@ -4,12 +4,12 @@ import OracleBadge from './OracleBadge';
 describe('OracleBadge', () => {
   describe 'with verified=true', () => {
     it('should show verified state', () => {
-      const { getTextContent } = render(<OracleBadge verified={true} />);
-      expect(getTextContent()).toInclue('Oracle Verified');
+      const { getTextContent } = render(<OracleBadge verified=true />);
+      expect(getTextContent()).toInclude('Oracle Verified');
     });
 
     it('should have green background color', () => {
-      const { getBySelector } = render(<OracleBadge verified={true} />);
+      const { getBySelector } = render(<OracleBadge verified=true />);
       const element = getBySelector('span');
       expect(element).toHaveClassName('bg-green-100');
     });
